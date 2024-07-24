@@ -1,0 +1,85 @@
+Assignment-1
+~~~~~~~~~~~~~
+1. What are the popup boxes in javascript?
+   
+The various popup boxes in javascript are confirm, alert and prompt.
+
+Confirm Syntax: <script>
+        		window.confirm('Do you want to submit this form');
+    		   </script>
+
+Alert Syntax: <script>
+        		alert('Assignment 1');
+    		   </script>
+
+Prompt Syntax: <script>
+			let name = prompt("Please enter your name", "Shambhavi");
+		   </script>
+
+2. What is JavaScript engine for Safari?
+
+There are two types of engine used in Safari Browser.
+Rendering Engine - Webkit
+JS Engine - Nitro
+
+5. What are the key differences between Java and JavaScript?
+
+ a. Java is a object oriented programming language while javascript is an OOP Scripting language.
+ b. Java creates applications that run in JVM or browser while Javascript code runs on browser only or on server via NodeJs.
+ c. Java is both compiled as well as interpreted while javascript is interpreted language.
+ d. Java is mainly used for backend while javascript is used for both the frontend and backend.
+ e. Java uses more memory and javascript uses less memory.
+
+Assignment-2
+~~~~~~~~~~~~
+1. Is it possible to disable JavaScript in browser?  If yes, How to disable javascript in browser?
+
+ Yes, It is possible to disable Javascript in browser. 
+
+There are two ways to disable JavaScript in Edge:
+	a. Using Site Permission in Setting page
+	b. Using Command Menu in Developer tools
+
+2. What is the difference between undefined and not defined in JavaScript?
+
+  undefined: When we declared a variable in the code but did not assign the value before printing the variable value.
+		These variables do exist in memory.
+		
+		<script>
+			let x;
+			console.log(x);
+		</script>
+
+  not defined: When we did not declare the variable and try to call a given variable.
+		 non defined is usually caused when you tring to access a variable that is out of scope.		
+		
+3. Difference between ==  and ===?
+
+   The main difference between these two operators is the way they compare the two values.
+   a. == operator compares the values of two variables after type conversion is done while === operator compares the values of two variables after type conversion.
+   Syntax for == operator:
+	 console.log(21 == 21);// Output- True
+    	 console.log(21 == '21');//Output-True
+
+   Syntax for === operator:
+	 console.log(true === 1);//Output- false
+    	 console.log(true === 'true');//Output- false
+
+4. What does the isNaN() function?
+    
+   a. The JavaScript isNaN() Function is used to check whether a given value is an illegal number or not. 
+   b. Return Type: It returns true if the value is a NaN else returns false.
+ 
+5. Difference between Client side JavaScript and Server side JavaScript?
+
+   Client-side JavaScript and server-side js refers to the environment in which the javascript codes executed.
+   Client-side Javascript: a. This refers to Javascript code that runs on the client's web browser.
+				   b. It is mainly used for enhancing the user interface and interactivity of web pages.
+				   c. Common use cases include form-validation, dynamic content updates without reloading the page.
+	
+   Server side JavaScript: a. This refers to Javascript code that runs on the server rather than the client's web browser.
+				   b. Used for server side scripting
+				   c. Common use cases include handing form submissions(using zod library or yup), accessing databases and generating dynamic web pages.
+
+
+
