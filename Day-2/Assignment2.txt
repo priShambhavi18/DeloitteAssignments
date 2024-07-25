@@ -1,0 +1,12 @@
+4.  What is BOM?  DOM?   Diff.  between BOM vs DOM? 
+
+   a. BOM stands for Browser Object Model.
+   b. It represents the browser's interface for javascript to interact with the browser window.
+   c. It include objects like 'window', 'navigator', 'screen'.
+
+   DOM
+
+   a. BOM stands for Document Object Model.
+   b. It is a programming interface for web documents.
+   c. It represents the structure of an HTML or XML documents as a hierarchial tree of objects.
+   d. Each node in the tree represents a part of the document.
