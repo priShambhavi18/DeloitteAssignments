@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Product Details</h3>
+
+    <hr>
+    <fieldset>
+        Product Name: <input type="text" id="t1">
+        <br>
+        <br>
+        Unit Price: <input type="number" id="price">
+        <br>
+        <br>
+        Quantity: <input type="number" id="qty">
+        <br>
+        <br>
+        <input type="button" onclick="buttonClick()" value="Get Total">
+    </fieldset>
+    <p id="p1"></p>
+    <script>
+        function buttonClick() {
+            var x = window.confirm("Do you want to continue?");
+            if (x) {
+                var p = parseInt(document.getElementById("price").value);
+                var q = parseInt(document.getElementById("qty").value);
+                if (q <= 10) {
+                    let sum = p * q;
+                    var message = "Total Amount: " + sum;
+                    document.getElementById("p1").innerHTML = message;
+                }
+                if (q > 10 && q <= 20) {
+                    let sum = (p*q) - ((p*q * 10) / 100);
+                    var message = "Total Amount: " + sum;
+                    document.getElementById("p1").innerHTML = message;
+                }
+                if (q > 20 && q <= 30) {
+                    let sum = p*q - p*q * 15 / 100;
+                    var message = "Total Amount: " + sum;
+                    document.getElementById("p1").innerHTML = message;
+                }
+                else (q > 30)
+                {
+                    let sum = p*q - p*q * 20 / 100;
+                    var message = "Total Amount: " + sum;
+                    document.getElementById("p1").innerHTML = message;
+                }
+            }
+            else {
+                document.getElementById("p1").innerHTML = "Waiting...";
+            }
+        }
+    </script>
+</body>
+
+</html>
