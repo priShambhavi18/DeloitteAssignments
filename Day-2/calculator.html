@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Mathematical Operations</h3>
+
+    <hr>
+    <fieldset>
+        <legend>Calculate</legend>
+        First Number: <input type="text" id="t1">
+        <br>
+        <br>
+        Second Number: <input type="text" id="t2">
+        <br>
+        <br>
+        <input type="button" id="sum" onclick="my_function(event)" value="Add">
+        <input type="button" id="sub" onclick="my_function(event)" value="Sub">
+        <input type="button" id="mul" onclick="my_function(event)" value="Multiply">
+    </fieldset>
+
+    <p id="p1">
+
+    </p>
+
+    <script>
+        function my_function(event) {
+            var find_operator = event.target.id;
+            console.log(find_operator);
+            if (find_operator == "sum") {
+                var n1 = parseInt(document.getElementById("t1").value);
+                var n2 = parseInt(document.getElementById("t2").value);
+                var sum = n1 + n2;
+                var message = "Sum Result: " + sum;
+                document.getElementById("p1").innerHTML = message;
+            }
+            else if (find_operator == "sub") {
+                var n1 = parseInt(document.getElementById("t1").value);
+                var n2 = parseInt(document.getElementById("t2").value);
+                var sub = n1 - n2;
+                var message = "Sub Result: " + sub;
+                document.getElementById("p1").innerHTML = message;
+            }
+            else {
+                var n1 = parseInt(document.getElementById("t1").value);
+                var n2 = parseInt(document.getElementById("t2").value);
+                var sub = n1 * n2;
+                var message = "Multiply Result: " + sub;
+                document.getElementById("p1").innerHTML = message;
+            }
+        }
+    </script>
+</body>
+
+</html>
