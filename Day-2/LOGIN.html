@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h3>Working with Forms in JavaScript</h3>
+    <hr />
+
+    <fieldset>
+        <legend>User Login</legend>
+        User Name : <input type="text" id="t1" />
+        <br /><br />
+        Password : <input type="password" id="t2" />
+        <br /><br />
+        <input type="button" onclick="buttonClick()" value="Login" />
+
+        <p id="p1"></p>
+    </fieldset>
+
+
+    <script>
+
+        function buttonClick() {
+            var txtObj1 = document.getElementById("t1");
+            var txtObj2 = document.getElementById("t2");
+            var paraObj = document.getElementById("p1");
+
+
+            var uid = txtObj1.value;
+            var pwd = txtObj2.value;
+
+            var message = "";
+
+            if (uid == "admin" && pwd == "admin123") {
+                message = "<p> Welcome to " + uid + "</p>";
+                paraObj.innerHTML = message;
+                document.getElementById("p1").style.color = "green";
+            }
+            else {
+                message = "Invalid User Id or Password";
+                paraObj.innerHTML = message;
+                document.getElementById("p1").style.color = "red";
+            }
+
+        }
+    </script>
+</body>
+
+</html>
