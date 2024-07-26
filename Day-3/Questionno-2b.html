@@ -1,0 +1,67 @@
+<!-- Create a web page to demonstrate object creation techniques in JavaScript -->
+<html>
+
+<head>
+    <style>
+        div {
+            border: 2px solid Red;
+            color: Blue;
+            font-size: 30px;
+            height: 90px;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>Working with Objects in JS</h3>
+    <hr />
+    <input type="button" value="Object-1" onclick="f1()" />
+    <input type="button" value="Object-2" onclick="f2()" />
+    <input type="button" value="Object-3" onclick="f3()" />
+    <br></br>
+
+    <div id="div1"> </div>
+
+    <script>
+        var divObj = document.getElementById("div1");
+
+        function f1() {
+            // 1. Object Initializer
+            var s1 = { empno: 1025, ename: "Ravi", job: "Software Developer", sal: 10000000, deptno: 102 };
+            var str = `Employee Number : ${s1.empno} , Employee Name : ${s1.ename}, Job : ${s1.job},Salary : ${s1.sal},Department Number : ${s1.deptno}`;
+            divObj.innerHTML = str;
+        }
+
+        function f2() {
+            // 2. Empty Object
+            var s2 = {};
+            s2.empno = 2056;
+            s2.ename = "Ravi";
+            s2.job = "Software Developer";
+            s2.sal = 10000000;
+            s2.deptno = 102;
+
+            var str = `Employee Number : ${s2.empno} ,   Employee Name  :  ${s2.ename},Job : ${s2.job},Salary : ${s2.sal},Department Number : ${s2.deptno}`;
+            divObj.innerHTML = str;
+        }
+
+        // 3. Constructor Function
+        function Student() {
+            this.empno = 3025;
+            this.ename = "Maneesh";
+            this.job = "Software Developer";
+            this.sal = 10000000;
+            this.deptno = 102
+        }
+
+        function f3() {
+            var s3 = new Student();
+            var str = `Employee Number  : ${s3.empno} ,   Employee Name    :  ${s3.ename},Job : ${s3.job},Salary : ${s3.sal},Department Number : ${s3.deptno}`;
+            divObj.innerHTML = str;
+        }
+
+    </script>
+</body>
+
+</html>
