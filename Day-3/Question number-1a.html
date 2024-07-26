@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <fieldset>
+        <legend>Calculate Number Of Even Numbers:</legend>
+        <br>
+        <input type="number" id="element">
+        <button id="btn1" onclick="addElement()">Add Element</button>
+        <button id="btn1" onclick="cnt_even()">Calculate Even Numbers</button>
+        <p id="p1"></p>
+    </fieldset>
+
+    <br>
+    <br>
+    <fieldset>
+        <legend>Calculate Power:</legend>
+        <br>
+        Enter Base: <input type="number" id="base">
+        <br>
+        <br>
+        Enter Exponent: <input type="number" id="exp">
+        <br>
+        <br>
+        <button id="btn2" onclick="pow()">Power</button>
+        <p id="p2"></p>
+    </fieldset>
+    <br>
+    <br>
+    <fieldset>
+
+        <br>
+        <legend>Number Of Words:</legend>
+        <input type="text" id="stri">
+        <button id="btn2" onclick="cnt_space()">Number of words</button>
+        <p id="p3"></p>
+    </fieldset>
+
+
+    <script>
+        let arr = [];
+        function addElement() {
+            let ele =
+                arr.push(ele);
+        }
+
+        let cnt = 0;
+        function cnt_even() {
+            arr.map((n) => {
+                if (n % 2 == 0) {
+                    cnt++;
+                }
+            });
+            document.getElementById("p1").innerText = "Total Number of Even Number: " + cnt;
+        }
+
+        function pow() {
+            let x = parseInt(document.getElementById("base").value);
+            let y = parseInt(document.getElementById("exp").value);
+            let ans = 1;
+            for (let i = 0; i < y; i++) {
+                ans = ans * x;
+            }
+            document.getElementById("p2").innerText = "The power of a given number is: " + ans;
+        }
+
+        function cnt_space() {
+            let flag = 0, cnt1 = 0;
+            let str = document.getElementById("stri").value;
+            for (let i = 0; i < str.length; i++) {
+                if (str[i] == ' ' && flag == 0) {
+                    cnt1++;
+                    flag = 1;
+                }
+                else if (str[i] == ' ') {
+                    flag = 1;
+                }
+                else {
+                    flag = 0;
+                }
+            }
+            cnt1 = cnt1 + 1;
+            document.getElementById("p3").innerText = "Total Number Of Spaces: " + cnt1;
+        }
+
+
+    </script>
+</body>
+
+</html>
