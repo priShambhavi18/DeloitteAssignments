@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            height: 30px;
+        }
+
+        #btn {
+            width: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <fieldset>
+            <legend>Friend's Details</legend>
+            <input type="text" placeholder="Friend's Name: " id="nm">
+            <br><br>
+            <input type="number" placeholder="Contact Number: " id="num">
+            <br><br>
+            <input type="button" id="btn" value="Add Friend" onclick="add_frnd()">
+            <br><br>
+            <br>
+            <input type="text" placeholder="Enter Name: " id="name1">
+            <input type="button" value="Get Contact Number" onclick="get_number()">
+            <p id="data">
+            </p>
+        </fieldset>
+    </form>
+    <script>
+        var mapObj = new Map();
+        function add_frnd() {
+            let name = document.getElementById("nm").value;
+            let p_no = document.getElementById("num").value;
+            mapObj.set(name, p_no);
+        }
+
+
+        //         name is ty
+        // q52.html:41 mobile_no is 123
+
+
+        function get_number() {
+            let name = document.getElementById("name1").value;
+            mapObj.forEach((values, keys) => {
+                if (keys == name) {
+                    document.getElementById("data").innerHTML = values;
+                }
+            });
+        }
+
+
+
+    </script>
+</body>
+
+</html>
