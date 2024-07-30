@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <style>
+        table {
+
+            border: solid;
+        }
+
+        th,
+        td {
+            border: solid;
+            padding: 10px;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Table with js</h2>
+    <br>
+    <select class="form-select" id="country">
+        <option selected>All countries</option>
+        <option value="Germany">Germany</option>
+        <option value="Mexico">Mexico</option>
+        <option value="UK">UK</option>
+        <option value="Sweden">Sweden</option>
+        <option value="France">France</option>
+        <option value="Spain">Spain</option>
+        <option value="Canada">Canada</option>
+        <option value="Argentina">Argentina</option>
+        <option value="Switzerland">Switzerland</option>
+        <option value="Brazil">Brazil</option>
+
+    </select> <br>
+    <br>
+    <button onclick="clickbutton()">TABLE</button>
+    <table id="t1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>City</th>
+                <th>Country</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <script>
+        function clickbutton() {
+            let ar = [{ "Name": "Alfreds Futterkiste", "City": "Berlin", "Country": "Germany" }, { "Name": "Ana Trujillo Emparedados y helados", "City": "México D.F.", "Country": "Mexico" }, { "Name": "Antonio Moreno Taquería", "City": "México D.F.", "Country": "Mexico" }, { "Name": "Around the Horn", "City": "London", "Country": "UK" }, { "Name": "B's Beverages", "City": "London", "Country": "UK" }, { "Name": "Berglunds snabbköp", "City": "Luleå", "Country": "Sweden" }, { "Name": "Blauer See Delikatessen", "City": "Mannheim", "Country": "Germany" }, { "Name": "Blondel père et fils", "City": "Strasbourg", "Country": "France" }, { "Name": "Bólido Comidas preparadas", "City": "Madrid", "Country": "Spain" }, { "Name": "Bon app'", "City": "Marseille", "Country": "France" }, { "Name": "Bottom-Dollar Marketse", "City": "Tsawassen", "Country": "Canada" }, { "Name": "Cactus Comidas para llevar", "City": "Buenos Aires", "Country": "Argentina" }, { "Name": "Centro comercial Moctezuma", "City": "México D.F.", "Country": "Mexico" }, { "Name": "Chop-suey Chinese", "City": "Bern", "Country": "Switzerland" }, { "Name": "Comércio Mineiro", "City": "São Paulo", "Country": "Brazil" }];
+            let tableBody = document.querySelector("#t1 tbody");
+            let country = document.getElementById("country").value;
+
+            tableBody.innerHTML = '';
+            arr = ar.filter(checkcountry);
+            arr.forEach(customer => {
+                let row = document.createElement("tr");
+                Object.values(customer).forEach(text => {
+                    let cell = document.createElement("td");
+                    cell.textContent = text;
+                    row.appendChild(cell);
+                });
+                tableBody.appendChild(row);
+            });
+        }
+
+        function checkcountry(a) {
+            let country = document.getElementById("country").value;
+
+            if (country == "All countries") {
+                return a;
+            }
+            else {
+                return a.Country == country;
+            }
+        }
+    </script>
+</body>
+</html>
