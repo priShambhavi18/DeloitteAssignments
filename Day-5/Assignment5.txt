@@ -1,0 +1,22 @@
+ 3. What is setInterval()  and setTimeout() methods in JavaScript?
+  
+    1. setTimeout()
+
+	The setTimeout() method is used to execute a function or a specified piece of code once after a delay of a specified number of milliseconds.
+    
+    2. setInterval()
+
+	The setInterval() method is used to repeatedly execute a function or a specified piece of code at every given time-interval as long as it is not stopped.
+      This is useful for tasks that need to be repeated at regular intervals.
+
+4.  What are promisees in JavaScript? Why do we use? 
+
+     A Promise in JavaScript is an object representing the eventual completion or failure of an asynchronous operation.
+	
+     Syntax: 
+		let myPromise = new Promise(function(myResolve, myReject) {
+				myResolve();
+  				myReject(); 
+		});
+
+		A JavaScript Promise object can be: Pending, Fulfilled, Rejected
