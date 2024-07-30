@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="Button" value="Show_details" onclick="show_data()">
+    <div id="details"></div>
+    <script>
+        class BankAccount {
+            account_no = 0;
+            name = "";
+            city = "Delhi";
+            email = "xyz@gmail.com";
+            phone_number;
+            constructor(account_no, name) {
+                this.account_no = account_no;
+                this.name = name;
+            }
+        }
+
+        class FDAccount extends BankAccount {
+            FDAmount = 0;
+            InterestRate;
+            Duration;
+            constructor(account_no, name, FDAmount, InterestRate, Duration) {
+                super(account_no, name);
+                this.InterestRate = 8.5;
+                this.Duration = 12;
+                this.FDAmount = FDAmount;
+            }
+
+            showDetails() {
+                var str = (`Name :  ${this.name}, City: ${this.city} ,E-mail: ${this.email}, account_no : ${this.account_no}, FDAccount : ${this.FDAmount},  InterestRate: ${this.InterestRate}, Duration: ${this.Duration}`);
+                return str;
+            }
+
+        }
+        function show_data() {
+            let FDAccountObj = new FDAccount(123, "Sam", 3456);
+            let str = FDAccountObj.showDetails();
+            document.getElementById("details").innerHTML += str;
+        }
+
+    </script>
+</body>
+
+</html>
