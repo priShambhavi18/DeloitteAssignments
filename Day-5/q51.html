@@ -5,10 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        div {
+          background-color: lightcoral;
+        }
+        
+        .btn{
+            width: 150px;
+            background-color: rgb(109, 109, 201);
+        }
+        </style>
 </head>
 
 <body>
-    <input type="Button" value="Show_details" onclick="show_data()">
+    <input type="Button" class="btn" value="Show_details" onclick="show_data()">
+    <br>
+    <br>
     <div id="details"></div>
     <script>
         class BankAccount {
@@ -35,7 +47,7 @@
             }
 
             showDetails() {
-                var str = (`Name :  ${this.name}, City: ${this.city} ,E-mail: ${this.email}, account_no : ${this.account_no}, FDAccount : ${this.FDAmount},  InterestRate: ${this.InterestRate}, Duration: ${this.Duration}`);
+                var str = (`Name :  ${this.name} <br><br> City: ${this.city} <br><br> E-mail: ${this.email} <br><br> account_no : ${this.account_no} <br><br> FDAccount : ${this.FDAmount} <br><br>  InterestRate: ${this.InterestRate} <br><br> Duration: ${this.Duration}`);
                 return str;
             }
 
