@@ -40,23 +40,17 @@
             let p_no = document.getElementById("num").value;
             mapObj.set(name, p_no);
         }
-
-
-        //         name is ty
-        // q52.html:41 mobile_no is 123
-
-
         function get_number() {
             let name = document.getElementById("name1").value;
             mapObj.forEach((values, keys) => {
                 if (keys == name) {
                     document.getElementById("data").innerHTML = values;
                 }
+                else{
+                    alert("No Such Name Exists..")
+                }
             });
         }
-
-
-
     </script>
 </body>
 
