@@ -1,0 +1,58 @@
+<html>
+
+<head></head>
+
+<body>
+    <h3>Assignment 2</h3>
+    <hr />
+    <input type="button" value="Show Users" onclick="showUsers()" />
+    <br><br>
+    <table id="table1" border="2" width="500" cellpadding="10" cellspacing="0">
+        <tr>
+            <th>Id</th>
+            <th>E-mail</th>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>Avatar</th>
+        </tr>
+    </table>
+
+    <script>
+        async function showUsers() {
+            const url = "https://reqres.in/api/users";
+            try {
+                let response = await window.fetch(url);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                let jsonResponse = await response.json();
+                let userData = jsonResponse.data;
+
+                const tableObj = document.getElementById("table1");
+                let i = 1;
+
+                for (let item of userData) {
+                    let rowObj = tableObj.insertRow(i++);
+
+                    let cellObj1 = rowObj.insertCell(0);
+                    let cellObj2 = rowObj.insertCell(1);
+                    let cellObj3 = rowObj.insertCell(2);
+                    let cellObj4 = rowObj.insertCell(3);
+                    let cellObj5 = rowObj.insertCell(4);
+
+                    cellObj1.innerHTML = item.id;
+                    cellObj2.innerHTML = item.email;
+                    cellObj3.innerHTML = item.first_name;
+                    cellObj4.innerHTML = item.last_name;
+                    console.log(item.avatar);
+                    cellObj5.innerHTML = `<img src="${item.avatar}" style="height:45px; width:45px; border-radius:50%;">`;
+                }
+            } catch (error) {
+                console.error('Failed to fetch users:', error);
+            }
+        }
+
+    </script>
+</body>
+
+</html>
