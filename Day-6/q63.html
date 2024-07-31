@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+</head>
+
+<body>
+    <h3>Product Details</h3>
+
+    <hr>
+    <fieldset>
+        Product Name: <input type="text" id="t1">
+        <br>
+        <br>
+        Unit Price: <input type="number" id="price">
+        <br>
+        <br>
+        Quantity: <input type="number" id="qty">
+        <br>
+        <br>
+        Total Amount: <input type="text" readonly name="text3" id="t3" />
+        <br><br>
+        <input type="button" name="b1" id="b1" value="Get Total">
+    </fieldset>
+    <script>
+        $(document).ready(function () {
+            $("#b1").click(function () {
+                var p = parseInt($("#price").val());
+                var q = parseInt($("#qty").val());
+
+                if (q < 0) {
+                    alert("Quantity can't be a negative number..");
+                }
+                if (q <= 10) {
+                    let sum = (p * q) - ((p * q * 5) / 100);
+                    var message = sum.toFixed(2);
+                    $("#t3").val(message);
+                }
+                if (q > 20) {
+                    let sum = (p * q) - ((p * q * 10) / 100);
+                    var message = sum.toFixed(2);
+                    $("#t3").val(message);
+                }
+                else (q > 30)
+                {
+                    let sum = (p * q) - ((p * q * 15) / 100);
+                    var message = sum.toFixed(2);
+                    $("#t3").val(message);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
