@@ -7,6 +7,12 @@
 
 			     To hide an element using jQuery:
 			     jQuery Code: $('#myElement').hide();
+					  $(selector).hide(speed, callback);
+					  Speed and callback are optional parameters. Specifies the speed of the hide effect. Default value is 400 						  milliseconds
+					  Possible values can be milliseconds, "slow", "fast".
+					  Callback Function:  A function to be executed after the hide() method is completed.
+					  
+
 
 			b.  What is the difference between   "this" and  $(this) in jquery programming?
 
