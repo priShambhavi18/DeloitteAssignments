@@ -1,0 +1,13 @@
+5. Find some details about following: 
+			a.   How to hide html element using JavaScript?  jQuery? 
+				
+			     To hide an element using JS: We can use the css property display:none
+			     HTML : <div id="myElement">This is the element to hide.</div>
+			     JS : document.getElementById('myElement').style.display = 'none';
+
+			     To hide an element using jQuery:
+			     jQuery Code: $('#myElement').hide();
+
+			b.  What is the difference between   "this" and  $(this) in jquery programming?
+
+			    In jQuery, this refers to the DOM object, and $(this) refers to the same object but with jQuery methods added.
