@@ -1,0 +1,34 @@
+<html>
+
+<head></head>
+
+<body>
+    <h3>Promise in JS</h3>
+    <hr />
+    <div id="div1" style="border:2px solid blue; padding:10px;">
+    </div>
+    <script>
+        var divObj = document.getElementById("div1");
+        const promiseObj = new Promise((resolve, reject) => {
+            let max = 50;
+            let min = 1;
+            let n = Math.floor(Math.random() * (max - min)) + min;
+
+            if (n % 6 == 0) {
+                resolve(" The given number is: " + n);
+            }
+            else {
+                reject("Promise Rejected");
+            }
+        });
+
+        promiseObj.then((response) => {
+            divObj.innerHTML += " <p style='color:green;'>" + response + "</p>";
+        })
+            .catch((error) => {
+                divObj.innerHTML += " <p style='color:red;'>" + error + "</p>";
+            });
+    </script>
+</body>
+
+</html>
