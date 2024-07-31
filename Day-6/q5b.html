@@ -1,0 +1,32 @@
+<!-- b.  How to select all textboxes using jQuery selector?  
+						Hint : Without using classname / id -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+</head>
+
+<body>
+    First Name: <input type="text" placeholder="First Name">
+    <br>
+    <br>
+    Last Name: <input type="text" placeholder="Last Name">
+    <br>
+    <br>
+    Password: <input type="password" placeholder="Password">
+    <script>
+        $(document).ready(function () {
+            $(":text").css("background-color",
+                "aqua");
+            $(":text").css("width",
+                "200px");
+        });
+    </script>
+</body>
+
+</html>
