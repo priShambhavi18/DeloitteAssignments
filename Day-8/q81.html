@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Applying Styles to Paragraph</h1>
+    <button id="btn1">B</button>
+    <button id="btn2">U</button>
+    <button id="btn3">I</button>
+    <br>
+    <br>
+    <div id="div">
+        <p id="para">jQuery is a fast, small, and feature-rich JavaScript library. It makes things like HTML document
+            traversal and manipulation, event handling, animation, and Ajax much simpler with an easy-to-use API that
+            works across a multitude of browsers. With a combination of versatility and extensibility, jQuery has
+            changed the way that millions of people write JavaScript.</p>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#div").css({ "width": "700px", "border": "4px solid blue" });
+            $("#btn1").click(function () {
+                $("#para").css("font-weight", "bold");
+            })
+            $("#btn2").click(function () {
+                $("#para").css("text-decoration", "underline");
+            })
+            $("#btn3").click(function () {
+                $("#para").css("font-style", "italic");
+            })
+        })
+    </script>
+</body>
+
+</html>
