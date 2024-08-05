@@ -1,0 +1,124 @@
+<!-- Create HTML Page to display Hello World message by using jQuery -->
+<html>
+
+<head>
+</head>
+
+<body>
+    <h3> jQuery Programming - DOM Traversing</h3>
+    <hr />
+    <input type="number" id="t0" placeholder="Employee Id" />
+    <input type="text" id="t1" placeholder="Employee name " />
+
+    <select name="desig" id="t2">
+        <option value="IT">IT</option>
+        <option value="Pilot">Pilot</option>
+        <option value="Doctor">Doctor</option>
+        <option value="SDE">SDE</option>
+    </select>
+    <input type="number" id="t3" placeholder="Salary" />
+    <input type="number" id="t4" placeholder="Department Number " />
+    <button id="button1">Add Employee</button>
+    <br></br>
+
+    <table id="table1" border="2" width="400px">
+        <tr>
+            <th>Employee Id</th>
+            <th>Employee Name</th>
+            <th>Job</th>
+            <th>Salary</th>
+            <th>Department Number</th>
+        </tr>
+        <tr>
+            <td>127</td>
+            <td>Sam</td>
+            <td>SDE</td>
+            <td>200K</td>
+            <td>IT</td>
+        </tr>
+        <tr>
+            <td>190</td>
+            <td>Rishi</td>
+            <td>Pilot</td>
+            <td>200K</td>
+            <td>IT</td>
+        </tr>
+        <tr>
+            <td>211</td>
+            <td>Manish</td>
+            <td>Doctor</td>
+            <td>200K</td>
+            <td>IT</td>
+        </tr>
+        <tr>
+            <td>250</td>
+            <td>Epsite</td>
+            <td>FD</td>
+            <td>200K</td>
+            <td>IT</td>
+        </tr>
+    </table>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+
+    <script>
+
+        $(document).ready(function () {
+            $("#table1").on("click", "a", function () {
+                alert("Hi");
+                $("#table1  tr").css("background-color", "white");
+                $(this).parent().parent().css("background-color", "pink");
+
+                let id = $(this).parent().siblings().eq(0).text();
+                let pname = $(this).parent().siblings().eq(1).text();
+                let desig = $(this).parent().siblings().eq(2).text();
+                let salary = $(this).parent().siblings().eq(2).text();
+                let dept = $(this).parent().siblings().eq(2).text();
+                $("#t0").val(id);
+                $("#t1").val(pname);
+                $("#t2").val(desig);
+                $("#t3").val(salary);
+                $("#t4").val(dept);
+            });
+            let arr = [];
+
+            $("#button1").click(function () {
+
+                let id = $("#t0").val();
+                let pname = $("#t1").val();
+                let desig = $("#t2").val();
+                let salary = $("#t3").val();
+                let dept = $("#t4").val();
+                arr.push(id);
+                arr.sort();
+
+
+                let index = arr.indexOf(id);
+                console.log(index);
+
+                let newRowStr = `<tr>
+                            <td> ${id} </td>
+							<td> ${pname} </td>
+							<td> ${desig} </td>
+                            <td> ${salary} </td>
+                            <td> ${dept} </td>
+						</tr>`;
+
+                var added = false;
+
+                $('#table1 tbody tr').each(function () {
+                    if (parseInt($(this).find("td:first").text()) > parseInt(index)) {
+                        $(this).before(newRowStr);
+                        $("input:text").val("");
+                        added = true;
+                        return false;
+                    }
+                });
+                if (!added) {
+                    $('#table1 tbody').append(newRowStr);
+                }
+            });
+        });				
+    </script>
+</body>
+
+</html>
