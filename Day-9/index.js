@@ -13,5 +13,5 @@ for (let item of usersArray) {
     item['uname'] = jsConvert.toHeaderCase(item['uname']);
     item['email'] = jsConvert.toLowerCase(item['email']);
     item['cartId'] = jsConvert.toUpperCase(random_uuid);
-    console.log(item);
+    console.log(`User Id = ${item.uname}, Email = ${item.email}, Cart Id = ${item.cartId}`);
 }
