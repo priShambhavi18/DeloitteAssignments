@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+</head>
+
+<body>
+    Person Name: <input type="text" placeholder="Enter Name" id="name">
+    <br><br>
+    Person Contact Number:<input type="number" placeholder="Enter Mobile Number " id="c_no">
+    <br><br>
+    Vehicle Number: <input type="text" placeholder="Enter Vehicle Number" id="v_no">
+    <br><br>
+    City Name:<input type="text" placeholder="Enter City Name" id="city_nm">
+    <br><br>
+    <input type="button" id="btn" value="Submit Details">
+
+    <script>
+        $(document).ready(function () {
+            $('#name').keyup(function () {
+                $("#sp1").remove();
+                let name = $("#name").val();
+                let pattern_cname = /^[A-z]+$/;
+                if (pattern_cname.test(name) == false) {
+                    $(this).after('<span  id="sp1"  class="error">Characters Only!</span>');
+                }
+            });
+
+            $('#c_no').keyup(function () {
+                $("#sp2").remove();
+                let contact_no = $("#c_no").val();
+                let pattern_cno = /^\d{10}$/;
+                if (pattern_cno.test(contact_no) == false) {
+                    $(this).after('<span  id="sp2"  class="error">Please enter ten digit mobile number</span>');
+                }
+            });
+
+            $('#v_no').keyup(function () {
+                $("#sp3").remove();
+                let v_no = $("#v_no").val();
+                let pattern_vno = /^[A-Z0-9]+$/;
+                if (pattern_vno.test(v_no) == false) {
+                    $(this).after('<span  id="sp3"  class="error">Only Capital Letters and Numbers Allowed.</span>');
+                }
+            });
+
+            $('#city_nm').keyup(function () {
+                $("#sp4").remove();
+                let city = $("#city_nm").val();
+                let pattern_cno = /^[A-Z]+$/;
+                if (pattern_cno.test(city) == false) {
+                    $(this).after('<span  id="sp4"  class="error">Only Capital Letters Allowed.</span>');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
